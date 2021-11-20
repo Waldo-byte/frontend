@@ -8,7 +8,7 @@ const UserProfiles = () =>{
 
   const fetchUsers = () => {
     const response = fetch("http://localhost:8080/photoDot/mvc/UserAccount/all");
-    axios.get("http://localhost:8080/photoDot/mvc/UserAccount/all").then((res)=> {
+    axios.get("http://localhost:8080/UserAccount/all").then((res)=> {
       console.log(res.data);
       setUserprofiles(res.data);
     });
