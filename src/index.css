@@ -1,8 +1,19 @@
+:root{
+  font-size: 62.5%;
+}
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Helvetica, sans-serif;
+}
+
+body{
+  background-image: url("./resources/pawel-czerwinski-MeecA0PPiJM-unsplash.jpg");
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 input, button{
@@ -17,7 +28,8 @@ input, button{
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color:rgb(46, 46, 46);
+  /* background-image: url("./resources/pawel-czerwinski-MeecA0PPiJM-unsplash.jpg");
+  background-size: cover; */
 }
 
  form{
@@ -91,7 +103,7 @@ form .form-inside .form-group input:focus {
 form .form-inside button{
   width: 80px;
   display: inline-block;
-  padding: 10px 15px;
+  padding: 10px 10px;
   border-radius: 8px;
   background-image: linear-gradient(to right,#fe621d 50%, #fe621d 50%,#00CFC1);
   background-size: 200%;
@@ -106,3 +118,54 @@ form .form-inside button{
 form .form-inside button:hover{
   background-position: 100% 0%;
 }
+
+button {
+  width: 10vh;
+  justify-self: center;
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right,#fe621d 50%, #fe621d 50%,#00CFC1);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover{
+  background-position: 100% 0%;
+}
+
+img{
+  justify-self: left;
+  height: 10vh;
+  width: 10vh;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  transition: 0.4s;
+}
+
+h1{
+  width: 100vh;
+  border-radius: 20px;
+  background-image: linear-gradient(to top left,#fe621d,#00CFC1);
+  background-size: 200%;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+h1 >*{
+  justify-content: left;
+}
+
+h1:hover{
+  background-position: 100% 0%;
+  box-shadow: 10px 10px 10px 10px rgb(0, 0, 0);
+}
+

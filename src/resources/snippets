@@ -1,0 +1,3 @@
+<label htmlFor="text">Enter a number to delete</label>
+                    <input type="text" onChange = {e => setTodelete({...todelete, name: e.target.value})} value = {todelete.name} />
+                    <button type = "button" onClick ={selectfileToDelete}>Delete</button>

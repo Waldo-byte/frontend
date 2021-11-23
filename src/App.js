@@ -4,6 +4,9 @@ import axios from "axios";
 import LoginForm from './components/LoginForm';
 import './index.css';
 import SignUpForm from './components/SignUpForm';
+import Cookies from 'universal-cookie';
+import HeaderComponent from './components/HeaderComponent';
+import BasePage from './components/BasePage';
 
 // const UserProfiles = () =>{
 //   const [userProfiles, setUserprofiles]= useState([]);
@@ -16,9 +19,9 @@ import SignUpForm from './components/SignUpForm';
 //     });
 //   }
 
-//   useEffect(() =>{
-//     fetchUsers();
-//   }, []);
+  // useEffect(() =>{
+  //   fetchUsers();
+  // }, []);
 
 //     return userProfiles.map((userProfile, index) => {
 //     return ( 
@@ -31,31 +34,49 @@ import SignUpForm from './components/SignUpForm';
 
 // // };
 
+
+//State 0 not logged in
+//State 1 logged in
+//State 3 Sign Up
 function App() {
-
-  const [user ,setUserprofiles] = useState({name:""});
+  const initialstate = 0;
+  const [user ,setUserprofiles] = useState({});
   const [error, setError] = useState("");
-  const[singup, setSignUp] = useState();
+  const [shouldupdate, setshouldupdate] = useState(true);
 
-  const Login = details=>{
-    console.log(details);
+  const [appstate, setAppState] = useState(initialstate);
+
+    const forceUpdate = () =>{
+        setshouldupdate(!shouldupdate);
+    }
+
+  //const cookies = new Cookies(); 
+
+  function Login(details, state){
+    setUserprofiles(details);
+    setAppState(state);
   }
+
+  function signUp(state){
+    setAppState(state);
+  }
+
   const Logout = () => {
     setUserprofiles({
-      name : ""
+      email : ""
     });
   }
   
   return (
-    <div className = "App">
-      {(user.name !== "") ? (
-        <div className = "welcome">
-          <h2>Welcome <span>{user.name}</span></h2>
-          <button onClick = {Logout}>Logout</button>
-        </div>
-      ) : ( (singup != true) ?(
-        <LoginForm Login={Login} error={error} />
-      ) : (<SignUpForm/>))};
+    <div>
+      <HeaderComponent/>
+      <div className = "App">
+      {(appstate === 1) ? (
+        <BasePage userstate = {user} signUp= {signUp} forcedupdate = {forceUpdate}/>
+      ) : ( (appstate === 0) ?(
+        <LoginForm Login={Login} error={error} signup = {signUp}/>
+      ) : (<SignUpForm SignUp = {signUp}/>))};
+      </div>
     </div>
   );
 }

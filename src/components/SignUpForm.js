@@ -2,19 +2,16 @@
 import React,{useState} from "react";
 import axios from "axios";
 
-function SignUpForm() {
+function SignUpForm({SignUp}) {
     const [userdetails, setuserdetails]= useState({name:"", 
     surname: "",
     email: "",
     password: "" });
     const [password, setPassword] = useState({password1:"", password2:""})
-
-    const test = false;
     var error = "";
 
     const createUser = ( name , surname, email, password) =>{
-        const json = {name, surname, email, password}
-        axios.post('http://192.168.0.30:8080/UserAccount/',null ,{
+        axios.post('http://localhost:8080/UserAccount/',null ,{
             params:{
                 name, 
                 surname, 
@@ -49,10 +46,16 @@ function SignUpForm() {
             else{
                 console.log("else 2")
                 createUser(userdetails.name, userdetails.surname, userdetails.email, userdetails.password);
+                sign();
             }
         }
        
 
+    }
+
+
+    const sign = () =>{
+        SignUp(0);
     }
 
     return (
@@ -81,6 +84,7 @@ function SignUpForm() {
                     <input type="password" name="password" id="password" onChange = {e => setPassword({...password, password2: e.target.value})} value = {password.password2}/>
                 </div>
                 <button onClick ={signUpCLick} type ="button">Sign Up</button>
+                <button onClick ={sign} type ="button">Cancel</button>
         </div>
         </form>
     )

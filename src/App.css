@@ -1,0 +1,61 @@
+div .photos{
+    background-image: url(./resources/cash-macanaya-9p16kHC3Y9o-unsplash.jpg);
+    border-radius: 25px;
+}
+
+
+a{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30;
+    color: black;
+    padding-bottom:px;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+  
+h2 .above{
+    border: 20px black;
+    width: 100vh;
+    color:white;
+    padding-left: 23vh;
+    padding-bottom: 1vh;
+    background-size: 20vh;
+    border-radius: 25px;
+}
+h2 .above .header{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    padding-right: 20px;
+    }
+
+.above label{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30;
+}
+
+h2 .above input{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    background-image: to linear-gradient(to bottom right,#fe621d,#00CFC1);
+    background-size: 200%;
+}
+
+h2 .above button{
+    width: 50vh;
+  justify-self: center;
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right,#fe621d 50%, #fe621d 50%,#00CFC1);
+  background-size: 200%;
+  background-position: 0%;
+  transition: 0.4s;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+  margin-right: 70px;
+}
+
+h2 .above button:hover{
+    background-position: 100% 0%;
+}
